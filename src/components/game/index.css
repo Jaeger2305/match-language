@@ -1,0 +1,17 @@
+.App {
+  display: grid;
+  grid-template-columns: auto 450px auto;
+  grid-template-rows: auto 95vh auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.play-area {
+  text-align: center;
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: #ffff83;
+  border-style: solid;
+  border-radius: 15px;
+  border-width:20px;
+  border-color:#cd83ff;
+}
