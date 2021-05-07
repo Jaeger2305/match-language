@@ -9,12 +9,19 @@ export default function game() {
       <div className="match-modal">
         <MatchModal />
       </div>
-      <div className="play-area">
+      <div className="play-area"></div>
+      <div className="player-1-area">
         <Card />
+      </div>
+      <div className="shared-area">
         <Card />
+      </div>
+      <div className="player-2-area">
         <Card />
       </div>
       <div className="stats">
+        <Stats />
+      </div>
     </div>
   );
 }
