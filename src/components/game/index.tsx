@@ -1,6 +1,7 @@
 import './index.css';
 import Card from '../card'
 import MatchModal from '../match-modal'
+import Stats from '../stats'
 
 export default function game() {
   return (
@@ -13,6 +14,7 @@ export default function game() {
         <Card />
         <Card />
       </div>
+      <div className="stats">
     </div>
   );
 }

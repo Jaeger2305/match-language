@@ -1,0 +1,9 @@
+.stats {
+  font-size: 3rem;
+  background: black;
+  color: white;
+}
+
+.reflected {
+  transform:rotate(180deg); 
+}
