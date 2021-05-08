@@ -1,11 +1,11 @@
+import { Card } from '../../game';
 import './index.css';
 
-export default function card() {
+export default function card(props: {card: Card}) {
+  const matchablesNodes = props.card.matchables.map(({ translationKey }) => <div className="matchable">{translationKey}</div>)
   return (
     <div className="card">
-      <div className="matchable">stuff</div>
-      <div className="matchable">stuff</div>
-      <div className="matchable">stuff</div>
+      {matchablesNodes}
     </div>
   );
 }
