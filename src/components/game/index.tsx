@@ -81,7 +81,7 @@ export default function Game() {
         />
       </div>
       <div className="stats">
-        <Stats />
+        <Stats player1Hand={player1Hand} player2Hand={player2Hand} />
       </div>
     </div>
   );
