@@ -1,8 +1,5 @@
 .card {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+  position:relative;
   height: 100%;
   width: 100%;
   background: white;
@@ -11,6 +8,7 @@
 }
 
 .matchable {
+  position:absolute;
   background: green;
   margin: 5px;
   height: 50px;
