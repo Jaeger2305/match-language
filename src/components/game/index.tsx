@@ -2,13 +2,13 @@ import "./index.css";
 import CardComponent from "../card";
 import MatchModal from "../match-modal";
 import Stats from "../stats";
-import {Language} from "../../localisation";
+// import {Language} from "../../localisation";
 import {ReactNode, useState} from "react";
 import {Card, cards, Matchable} from "../../game";
 import {shuffle} from "lodash";
 
-const primaryLanguage = Language.English;
-const secondaryLanguage = Language.German;
+// const primaryLanguage = Language.English;
+// const secondaryLanguage = Language.German;
 
 export default function Game() {
   const gameCards = shuffle(cards);
