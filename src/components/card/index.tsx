@@ -67,7 +67,7 @@ export default function card({
     // return array
     return positionsArray;
   }
-  positions = generatePositionsArray(200, 200, 60, 15);
+  positions = generatePositionsArray(220, 220, 60, 15);
   function getRandomPosition(
     array: Array<Position>,
     removeTaken: boolean
