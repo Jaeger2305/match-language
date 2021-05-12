@@ -92,10 +92,11 @@ export default function card({
     const pos = getRandomPosition(positions, true);
 
     return (
-      <div
-        className="matchable"
+      <img
         key={matchable.translationKey}
-        onClick={() => attemptMatch(matchable)}
+        src={`/dobble-icons/${matchable.translationKey}.png`}
+        alt={matchable.translationKey}
+        className="matchable"
         style={{
           left: pos.x,
           top: pos.y,
@@ -103,9 +104,8 @@ export default function card({
             Math.random() * 360
           }deg)`,
         }}
-      >
-        {matchable.translationKey}
-      </div>
+        onClick={() => attemptMatch(matchable)}
+      />
     );
   });
   return <div className="card">{matchablesNodes}</div>;

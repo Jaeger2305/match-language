@@ -20,10 +20,10 @@ export const cards: Array<Card> = [
         translationKey: TranslationKey.Sun,
       },
       {
-        translationKey: TranslationKey.Sunglasses,
+        translationKey: TranslationKey.Glasses,
       },
       {
-        translationKey: TranslationKey.Taxi,
+        translationKey: TranslationKey.Car,
       },
     ],
   },
@@ -31,13 +31,13 @@ export const cards: Array<Card> = [
     id: "2",
     matchables: [
       {
-        translationKey: TranslationKey.Hand,
+        translationKey: TranslationKey.Dobble,
       },
       {
-        translationKey: TranslationKey.Ice,
+        translationKey: TranslationKey.Icecube,
       },
       {
-        translationKey: TranslationKey.OrangeMan,
+        translationKey: TranslationKey.Man,
       },
       {
         translationKey: TranslationKey.Snowflake,
@@ -48,19 +48,19 @@ export const cards: Array<Card> = [
     id: "3",
     matchables: [
       {
-        translationKey: TranslationKey.Hand,
+        translationKey: TranslationKey.Dobble,
       },
       {
-        translationKey: TranslationKey.Ice,
+        translationKey: TranslationKey.Icecube,
       },
       {
-        translationKey: TranslationKey.OrangeMan,
+        translationKey: TranslationKey.Man,
       },
       {
-        translationKey: TranslationKey.Sunglasses,
+        translationKey: TranslationKey.Glasses,
       },
       {
-        translationKey: TranslationKey.Taxi,
+        translationKey: TranslationKey.Car,
       },
     ],
   },
