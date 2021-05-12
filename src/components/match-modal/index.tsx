@@ -1,10 +1,11 @@
-import './index.css';
+import {Matchable} from "../../game";
+import "./index.css";
 
-export default function matchModal() {
+export default function matchModal({match}: {match: Matchable}) {
   return (
     <div className="modal">
-      <div className="match-name reflected">Stuff</div>
-      <div className="match-name">Stuff</div>
+      <div className="match-name reflected">{match.translationKey}</div>
+      <div className="match-name">{match.translationKey}</div>
     </div>
   );
 }

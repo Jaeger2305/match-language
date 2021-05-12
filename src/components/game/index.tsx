@@ -64,7 +64,7 @@ export default function Game() {
 
   function flashMatchModal(
     matchable: Matchable,
-    flashMilliseconds: number = 3000
+    flashMilliseconds: number = 1000
   ) {
     setActiveMatch(matchable);
     window.setTimeout(() => setActiveMatch(null), flashMilliseconds);
@@ -74,7 +74,7 @@ export default function Game() {
     if (activeMatch)
       return (
         <div className="match-modal">
-          <MatchModal />
+          <MatchModal match={activeMatch} />
         </div>
       );
   }
