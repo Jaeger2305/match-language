@@ -12,9 +12,15 @@ import {shuffle} from "lodash";
 
 export default function Game() {
   const gameCards = shuffle(cards);
-  const [player1Hand, setPlayer1Hand] = useState([gameCards.pop()!]);
-  const [player2Hand, setPlayer2Hand] = useState([gameCards.pop()!]);
-  const [deck, setDeck] = useState(gameCards);
+  const [player1Hand, setPlayer1Hand] = useState<Array<Card>>([
+    gameCards.pop()!,
+  ]);
+  const [player2Hand, setPlayer2Hand] = useState<Array<Card>>([
+    gameCards.pop()!,
+  ]);
+  const [deck, setDeck] = useState<Array<Card>>(gameCards);
+
+  const [activeMatch, setActiveMatch] = useState<Matchable | null>(null);
 
   function matchingCard(
     source: Card,
@@ -43,7 +49,12 @@ export default function Game() {
 
   function renderCardStack(stack: Array<Card>): ReactNode {
     if (stack.length) {
-      return <CardComponent card={stack.slice(-1)[0]} />;
+      return (
+        <CardComponent
+          flashMatchModal={flashMatchModal}
+          card={stack.slice(-1)[0]}
+        />
+      );
     }
 
     return (
@@ -51,15 +62,31 @@ export default function Game() {
     );
   }
 
+  function flashMatchModal(
+    matchable: Matchable,
+    flashMilliseconds: number = 3000
+  ) {
+    setActiveMatch(matchable);
+    window.setTimeout(() => setActiveMatch(null), flashMilliseconds);
+  }
+
+  function renderMatchModal() {
+    if (activeMatch)
+      return (
+        <div className="match-modal">
+          <MatchModal />
+        </div>
+      );
+  }
+
   return (
     <div className="App">
-      <div className="match-modal">
-        <MatchModal />
-      </div>
+      {renderMatchModal()}
       <div className="play-area"></div>
       <div className="player-1-area">
         <CardComponent
           card={player1Hand.slice(-1)[0]}
+          flashMatchModal={flashMatchModal}
           moveCard={(card: Card) =>
             moveCard(deck, setDeck, player1Hand, setPlayer1Hand, card)
           }
@@ -72,6 +99,7 @@ export default function Game() {
       <div className="player-2-area">
         <CardComponent
           card={player2Hand.slice(-1)[0]}
+          flashMatchModal={flashMatchModal}
           moveCard={(card: Card) =>
             moveCard(deck, setDeck, player2Hand, setPlayer2Hand, card)
           }

@@ -3,10 +3,12 @@ import "./index.css";
 
 export default function card({
   card,
+  flashMatchModal,
   moveCard,
   matchingCard,
 }: {
   card: Card;
+  flashMatchModal: (matchable: Matchable) => void;
   moveCard?: (card: Card) => void;
   matchingCard?: (source: Card, matchable: Matchable) => Card | null;
 }) {
@@ -15,6 +17,7 @@ export default function card({
     const match = matchingCard(card, translationKey);
     if (match) {
       moveCard(match);
+      flashMatchModal(translationKey);
     }
   }
 
