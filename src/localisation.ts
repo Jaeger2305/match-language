@@ -5,6 +5,7 @@ export enum Language {
 
 export enum TranslationKey {
   Apple = "apple",
+  Anchor = "anchor",
   Birdie = "birdie",
   Bolt = "bolt",
   Bomb = "bomb",
@@ -65,6 +66,7 @@ export enum TranslationKey {
 export const translations: Record<Language, Record<TranslationKey, string>> = {
   [Language.English]: {
     [TranslationKey.Apple]: "Apple",
+    [TranslationKey.Anchor]: "Anchor",
     [TranslationKey.Birdie]: "Birdie",
     [TranslationKey.Bolt]: "Bolt",
     [TranslationKey.Bomb]: "Bomb",
@@ -123,6 +125,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
   },
   [Language.German]: {
     [TranslationKey.Apple]: "Apfel",
+    [TranslationKey.Anchor]: "Anker",
     [TranslationKey.Birdie]: "Vogel",
     [TranslationKey.Bolt]: "Blitz",
     [TranslationKey.Bomb]: "Bombe",
