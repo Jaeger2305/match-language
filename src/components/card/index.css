@@ -10,5 +10,6 @@
 .matchable {
   position:absolute;
   margin: 5px;
-  width: 50px;
+  max-height: 60px;
+  max-width: 60px;
 }
