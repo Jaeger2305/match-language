@@ -3,12 +3,11 @@ import CardComponent from "../card";
 import MatchModal from "../match-modal";
 import Stats from "../stats";
 // import {Language} from "../../localisation";
-import {ReactNode, useState} from "react";
+import {ReactNode, useContext, useState} from "react";
 import {Card, cards, Matchable} from "../../game";
 import {shuffle} from "lodash";
-
-// const primaryLanguage = Language.English;
-// const secondaryLanguage = Language.German;
+import {GameSettingsContext} from "../../stores/game-settings";
+import GameSettingsModal from "../game-settings-modal";
 
 export default function Game() {
   const gameCards = shuffle(cards);
@@ -21,6 +20,7 @@ export default function Game() {
   const [deck, setDeck] = useState<Array<Card>>(gameCards);
 
   const [activeMatch, setActiveMatch] = useState<Matchable | null>(null);
+  const {state} = useContext(GameSettingsContext);
 
   function matchingCard(
     source: Card,
@@ -71,16 +71,25 @@ export default function Game() {
   }
 
   function renderMatchModal() {
-    if (activeMatch)
+    if (state.language && activeMatch)
       return (
         <div className="match-modal">
           <MatchModal match={activeMatch} />
         </div>
       );
   }
+  function renderSettingsModal() {
+    if (!state.language)
+      return (
+        <div className="match-modal">
+          <GameSettingsModal />
+        </div>
+      );
+  }
 
   return (
     <div className="App">
+      {renderSettingsModal()}
       {renderMatchModal()}
       <div className="play-area"></div>
       <div className="player-1-area">
