@@ -18,13 +18,13 @@ export type Card = {
 };
 
 // generate random positions
-function generatePositionsArray(
+function generatePositionsArray({
   diameter = 230,
   divisions = 3,
   irregularity = 10,
   offset = 40,
-  curvatureStrength = 100
-): Array<Position> {
+  curvatureStrength = 100,
+}): Array<Position> {
   // declarations
   const positionsArray = [];
   var r, c;
@@ -92,9 +92,11 @@ function getRandomPosition(array: Array<Position>): Position {
 
 export const cards: Array<Card> = generateCards(7).map(
   (matchableIds, index, arr) => {
-    console.log(arr);
     const mappedTranslationsToId = Object.values(TranslationKey);
-    const positions = generatePositionsArray();
+    const positions = generatePositionsArray({
+      diameter: window.innerHeight / 4,
+      offset: window.innerHeight / 20,
+    });
     return {
       id: String(index),
       matchables: matchableIds.map((matchableId) => {
