@@ -1,0 +1,17 @@
+.matchable {
+  position:absolute;
+  margin: 5px;
+  max-height: min(60px, 10vh);
+  max-width: min(60px, 10vh);
+  opacity: 1;
+  transition: 1s;
+}
+
+.matchable.bad-match {
+  animation: 0.5s shake;
+  opacity: 0.4;
+}
+
+.matchable.good-match {
+  animation: 1s grow;
+}
