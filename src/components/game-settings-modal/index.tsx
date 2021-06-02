@@ -23,11 +23,13 @@ export default function GameSettingsModal() {
         defaultValue={undefined}
         value={state.language}
       >
-        <option value={undefined} disabled selected>
+        <option key={undefined} value={undefined} disabled selected>
           Pick a language
         </option>
         {Object.entries(Language).map(([language, key]) => (
-          <option value={key}>{language}</option>
+          <option key={key} value={key}>
+            {language}
+          </option>
         ))}
       </select>
     </div>

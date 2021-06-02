@@ -49,10 +49,12 @@ export default function Game() {
 
   function renderCardStack(stack: Array<Card>): ReactNode {
     if (stack.length) {
+      const card = stack.slice(-1)[0];
       return (
         <CardComponent
+          key={card.id}
           flashMatchModal={flashMatchModal}
-          card={stack.slice(-1)[0]}
+          card={card}
         />
       );
     }
@@ -87,6 +89,9 @@ export default function Game() {
       );
   }
 
+  const activePlayer1Card = player1Hand.slice(-1)[0];
+  const activePlayer2Card = player2Hand.slice(-1)[0];
+
   return (
     <div className="App">
       {renderSettingsModal()}
@@ -94,7 +99,8 @@ export default function Game() {
       <div className="play-area"></div>
       <div className="player-1-area">
         <CardComponent
-          card={player1Hand.slice(-1)[0]}
+          key={activePlayer1Card.id}
+          card={activePlayer1Card}
           flashMatchModal={flashMatchModal}
           moveCard={(card: Card) =>
             moveCard(deck, setDeck, player1Hand, setPlayer1Hand, card)
@@ -107,7 +113,8 @@ export default function Game() {
       <div className="shared-area">{renderCardStack(deck)}</div>
       <div className="player-2-area">
         <CardComponent
-          card={player2Hand.slice(-1)[0]}
+          key={activePlayer2Card.id}
+          card={activePlayer2Card}
           flashMatchModal={flashMatchModal}
           moveCard={(card: Card) =>
             moveCard(deck, setDeck, player2Hand, setPlayer2Hand, card)
