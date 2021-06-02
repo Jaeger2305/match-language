@@ -57,3 +57,16 @@ body {
     transform:scale(1.9)
   }
 }
+
+@keyframes fall-entrance {
+  0% {
+    transform: scale(1.5);
+    opacity: 0.7;
+    box-shadow: -10px 10px 5px 5px black;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: -2px 2px 5px 0px grey;
+  }
+}

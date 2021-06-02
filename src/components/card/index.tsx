@@ -4,11 +4,13 @@ import "./index.css";
 
 export default function CardComponent({
   card,
+  isAnimated,
   flashMatchModal,
   moveCard,
   matchingCard,
 }: {
   card: Card;
+  isAnimated: boolean;
   flashMatchModal: (matchable: Matchable) => void;
   moveCard?: (card: Card) => void;
   matchingCard?: (source: Card, matchable: Matchable) => Card | null;
@@ -27,10 +29,15 @@ export default function CardComponent({
     return (
       <MatchableComponent
         key={matchable.translationKey}
+        isAnimated={isAnimated}
         attemptMatch={attemptMatch}
         matchable={matchable}
       />
     );
   });
-  return <div className="card">{matchablesNodes}</div>;
+  return (
+    <div className={`card ${isAnimated ? "animated" : ""}`}>
+      {matchablesNodes}
+    </div>
+  );
 }

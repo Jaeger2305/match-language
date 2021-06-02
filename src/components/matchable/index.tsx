@@ -4,9 +4,11 @@ import "./index.css";
 
 export default function MatchableComponent({
   matchable,
+  isAnimated,
   attemptMatch,
 }: {
   matchable: Matchable;
+  isAnimated: boolean;
   attemptMatch: (matchable: Matchable) => boolean;
 }) {
   const [isGoodMatch, setIsGoodMatch] = useState(false);
@@ -14,6 +16,8 @@ export default function MatchableComponent({
 
   function selectMatch(translationKey: Matchable): void {
     const isMatch = attemptMatch(translationKey);
+    if (!isAnimated) return;
+
     if (isMatch) setIsGoodMatch(true);
     else setIsBadMatch(true);
   }

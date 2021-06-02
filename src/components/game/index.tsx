@@ -53,6 +53,7 @@ export default function Game() {
       return (
         <CardComponent
           key={card.id}
+          isAnimated={false}
           flashMatchModal={flashMatchModal}
           card={card}
         />
@@ -101,6 +102,7 @@ export default function Game() {
         <CardComponent
           key={activePlayer1Card.id}
           card={activePlayer1Card}
+          isAnimated
           flashMatchModal={flashMatchModal}
           moveCard={(card: Card) =>
             moveCard(deck, setDeck, player1Hand, setPlayer1Hand, card)
@@ -114,6 +116,7 @@ export default function Game() {
       <div className="player-2-area">
         <CardComponent
           key={activePlayer2Card.id}
+          isAnimated
           card={activePlayer2Card}
           flashMatchModal={flashMatchModal}
           moveCard={(card: Card) =>

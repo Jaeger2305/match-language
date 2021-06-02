@@ -3,8 +3,12 @@
   height: 100%;
   width: 100%;
   background: white;
-  box-shadow: 2px 2px 5px grey;
+  box-shadow: -2px 2px 5px grey;
   border-radius: 50%;
+}
+
+.card.animated {
+  animation: 0.8s fall-entrance;
 }
 
 .matchable {
