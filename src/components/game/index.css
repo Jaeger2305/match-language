@@ -7,16 +7,15 @@
 }
 
 .match-modal {
-  grid-area: 3 / 1 / 6 / 4;
   animation-duration: 0.5s;
 }
 
 .settings-modal {
-  grid-area: 3 / 2 / 6 / 5;
   animation-duration: 2s;
 }
 
 .modal {
+  grid-area: 3 / 2 / 6 / 5;
   animation-name: slideInFromLeft;
   text-align: center;
   margin: 0.5rem;
@@ -32,11 +31,11 @@
 .play-area {
   text-align: center;
   grid-area: 2 / 2 / 7 / 5;
-  background-color: #ffff83;
+  background-color: var(--app-primary-color);
   border-style: solid;
   border-radius: 15px;
-  border-width:20px;
-  border-color:#cd83ff;
+  border-width: 20px;
+  border-color: var(--app-secondary-color);
 }
 
 .player-1-area {

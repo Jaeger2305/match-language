@@ -1,7 +1,8 @@
 .stats {
   font-size: 3rem;
-  background: black;
-  color: white;
+  line-height: 1;
+  text-shadow: -1px -1px 3px var(--app-secondary-color), 3px 3px 4px var(--app-tertiary-color);
+  color: var(--app-text-light-color);
 }
 
 .reflected {

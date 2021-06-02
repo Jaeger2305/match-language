@@ -1,21 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Sigmar+One&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Sigmar One', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 :root {
   --modal-primary-colour: hotpink;
   --modal-secondary-colour: pink;
   --modal-tertiary-colour: black;
+  --app-primary-color: #ffff83;
+  --app-secondary-color: #cd83ff;
+  --app-tertiary-color: black;
+  --app-text-light-color: white;
+  --app-text-dark-color: black;
 }
 
 @keyframes slideInFromLeft {
