@@ -7,14 +7,26 @@
 }
 
 .match-modal {
-  text-align: center;
   grid-area: 3 / 1 / 6 / 4;
+  animation-duration: 0.5s;
+}
+
+.settings-modal {
+  grid-area: 3 / 2 / 6 / 5;
+  animation-duration: 2s;
+}
+
+.modal {
+  animation-name: slideInFromLeft;
+  text-align: center;
+  margin: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  background-color: hotpink;
-  opacity: 0.6;
+  background-color: var(--modal-primary-colour );
+  border-radius: 1rem;
+  box-shadow: 0px 0px 4px 3px var(--modal-tertiary-colour);
 }
 
 .play-area {

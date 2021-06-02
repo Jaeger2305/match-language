@@ -4,6 +4,7 @@ import {
   GameSettingsActionLookup,
 } from "../../stores/game-settings";
 import {useContext} from "react";
+import "./index.css";
 
 export default function GameSettingsModal() {
   const {state, dispatch} = useContext(GameSettingsContext);
@@ -16,9 +17,15 @@ export default function GameSettingsModal() {
     });
   }
   return (
-    <div className="modal">
-      <select onChange={handleLanguageSelect} value={state.language}>
-        <option value={undefined}></option>
+    <div>
+      <select
+        onChange={handleLanguageSelect}
+        defaultValue={undefined}
+        value={state.language}
+      >
+        <option value={undefined} disabled selected>
+          Pick a language
+        </option>
         {Object.entries(Language).map(([language, key]) => (
           <option value={key}>{language}</option>
         ))}

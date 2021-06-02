@@ -73,7 +73,7 @@ export default function Game() {
   function renderMatchModal() {
     if (state.language && activeMatch)
       return (
-        <div className="match-modal">
+        <div className="modal match-modal">
           <MatchModal match={activeMatch} />
         </div>
       );
@@ -81,7 +81,7 @@ export default function Game() {
   function renderSettingsModal() {
     if (!state.language)
       return (
-        <div className="match-modal">
+        <div className="modal settings-modal">
           <GameSettingsModal />
         </div>
       );

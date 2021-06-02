@@ -7,7 +7,7 @@ import {useContext} from "react";
 export default function MatchModal({match}: {match: Matchable}) {
   const {state} = useContext(GameSettingsContext);
   return (
-    <div className="modal">
+    <div>
       <div className="match-name reflected">
         {translations[state.language!][match.translationKey]}
       </div>
